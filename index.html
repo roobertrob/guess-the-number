@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Qual é o número? </title>
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
@@ -16,7 +16,11 @@
 
 <body>
     <div id="container">
-        <div class="title">Qual é o número?</div>
+        <div id="header">
+            <div class="title">Qual é o número?</div>
+            <div id="separador"></div>
+        </div>
+
 
         <div id="informe">
 
@@ -24,18 +28,57 @@
 
         <div id="numero">
 
+            <div id="vertical-center">
+                <div id="display-container">
+                    <div id="display-1" class="display-container display-size-12 display-no-0">
+                        <div class="segment-x segment-a"><span class="segment-border"></span></div>
+                        <div class="segment-y segment-b"><span class="segment-border"></span></div>
+                        <div class="segment-y segment-c"><span class="segment-border"></span></div>
+                        <div class="segment-x segment-d"><span class="segment-border"></span></div>
+                        <div class="segment-y segment-e"><span class="segment-border"></span></div>
+                        <div class="segment-y segment-f"><span class="segment-border"></span></div>
+                        <div class="segment-x segment-g"><span class="segment-border"></span></div>
+                    </div>
+                    <div id="display-2" class="display-container display-size-12 display-no-0">
+                        <div class="segment-x segment-a"><span class="segment-border"></span></div>
+                        <div class="segment-y segment-b"><span class="segment-border"></span></div>
+                        <div class="segment-y segment-c"><span class="segment-border"></span></div>
+                        <div class="segment-x segment-d"><span class="segment-border"></span></div>
+                        <div class="segment-y segment-e"><span class="segment-border"></span></div>
+                        <div class="segment-y segment-f"><span class="segment-border"></span></div>
+                        <div class="segment-x segment-g"><span class="segment-border"></span></div>
+                    </div>
+                    <div id="display-3" class="display-container display-size-12 display-no-0">
+                        <div class="segment-x segment-a"><span class="segment-border"></span></div>
+                        <div class="segment-y segment-b"><span class="segment-border"></span></div>
+                        <div class="segment-y segment-c"><span class="segment-border"></span></div>
+                        <div class="segment-x segment-d"><span class="segment-border"></span></div>
+                        <div class="segment-y segment-e"><span class="segment-border"></span></div>
+                        <div class="segment-y segment-f"><span class="segment-border"></span></div>
+                        <div class="segment-x segment-g"><span class="segment-border"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="reiniciar" class="invisivel">
+            <button type="submit" id="novaPartida" onclick="window.location.reload()">
+                <img src="assets/refresh_24px_outlined.svg" class="icon"> Nova partida</button>
         </div>
 
 
         <div id="form">
-            <input type="number" id="palpite" placeholder="Digite o palpite" name="palpite">
-            <button type="submit" id="enviar"> Enviar </button>
+            <input type="number" id="palpite" placeholder="Digite o palpite" name="palpite" onkeydown="if(event.keyCode == 13)
+            document.getElementById('enviar').click()">
+
+            <input type="submit" id="enviar" name="enviar" onclick="verificaNumero()">
         </div>
 
         <span id="valorApi"></span>
 
         <script src="js/getNumber.js"></script>
         <script src="js/verificaNumero.js"></script>
+
     </div>
 </body>
 
